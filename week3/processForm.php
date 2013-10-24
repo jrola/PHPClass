@@ -1,32 +1,49 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
- if(count($_POST))
+                
+       //echo $_POST["fullname"];
+        //print_r($_POST);
+        
+        $fullname = "";
+        $email = "";
+        $comments = "";
+        
+if (count($_POST))
             {
-                if ( !array_key_exists("fullname", $_POST) ) 
+            if (array_key_exists("fullname", $_POST))
                 {
-                   $fullname = $_POST["fullname"];                   
-              
+                    $fullname = $_POST["fullname"];
                 }
-                if ( !array_key_exists("email", $_POST) ) 
+       if (array_key_exists("fullname", $_POST))
                 {
-                   $fullname = $_POST["email"];                   
-              
-                }
-                if ( !array_key_exists("comments", $_POST) ) 
+                    $email = $_POST["email"];
+                }            
+       if (array_key_exists("fullname", $_POST))
                 {
-                   $fullname = $_POST["comments"];                   
-              
+                    $comments = $_POST["comments"];
                 }
             }
-            
-            
-
-
+if (!empty($fullname)&& !empty($email)&& !empty($comments)){
+    
+      $dbh = new PDO("mysql:host=localhost;port=3306;dbname=phplab","root","");
+       
+try
+      {
+        $stmt = $dbh->prepare('insert into week3 set fullname = :fullnameValue, '.
+                'email = :emailValue, '.'comments = :commentsValue');
+    
+        $stmt->bindParam(':fullnameValue', $fullname, PDO::PARAM_STR);
+        $stmt->bindParam(':emailValue', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':commentsValue', $comments, PDO::PARAM_STR);
+        $stmt->execute();
+        
+      echo "<h3>Info Submited</h3><p><a href='index.php'>Back to Form</a></p>";
+      }
+      catch (PDOException $e)
+              {
+                echo "Database error.";
+              }
+}
+else{
+    echo "<h3>Info NOT Submited</h3><p><a href='index.php'>Back to Form</a></p>";
+    }
 ?>

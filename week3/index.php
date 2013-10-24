@@ -10,42 +10,31 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
+       
+       <?php
+        $dbh = new PDO("mysql:host=localhost;port=3306;dbname=phplab","root","");
+        $stmt = $dbh->prepare('SELECT * FROM week3');
+        $stmt->execute();
         
-        //$_POST
-        //echo $_POST["fullname"];
+        $result = $stmt->fetchAll();
         
-        print_r($_POST);
-        
-            $fullname = "";
-            $email = "";
-            $comments = "";
-        
-        if(count($_POST))
-            {
-                if ( !array_key_exists("fullname", $_POST) ) 
-                {
-                   $fullname = $_POST["fullname"];                   
-              
-                }
-                if ( !array_key_exists("email", $_POST) ) 
-                {
-                   $fullname = $_POST["email"];                   
-              
-                }
-                if ( !array_key_exists("comments", $_POST) ) 
-                {
-                   $fullname = $_POST["comments"];                   
-              
-                }
+        if(count($result)){
+            foreach($result as $row){
+                print_r($row);
+                echo "<br />";
             }
+        } else{
+            echo "No rows returned";
+        }
         
-        ?>
+       ?>
         
-        <form name="mainform" method="post" action="index.php">
-            Full name: <input type="text" name="fullname" value="<?php echo $fullname?>" /><br />
-            Email: <input type="text" name="email" value="<?php echo $email?>" /><br />
-            Comments: <br /><textarea cols="20" rows="5" name="comments"><?php echo $comments?></textarea> <br />
+        
+        
+        <form name="mainform" method="post" action="processForm.php">
+            Full name: <input type="text" name="fullname" value="" /><br />
+            Email: <input type="text" name="email" value="" /><br />
+            Comments: <br /><textarea cols="20" rows="5" name="comments"></textarea> <br />
             
             <input type="submit" value="Submit" />
         </form>
