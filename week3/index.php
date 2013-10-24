@@ -18,11 +18,15 @@ and open the template in the editor.
         
         $result = $stmt->fetchAll();
         
-        if(count($result)){
+        //var_dump($result);
+        
+        if(count($result) ){
+            echo "<table border='1'>";
             foreach($result as $row){
-                print_r($row);
-                echo "<br />";
-            }
+             echo "<tr><td>", $row["Fullname"], "</td><td>", $row["Email"], "</td><td>", $row["Comments"], "</td></tr>";
+            } 
+                echo "</table>";
+            
         } else{
             echo "No rows returned";
         }

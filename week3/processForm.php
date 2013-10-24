@@ -3,6 +3,10 @@
        //echo $_POST["fullname"];
         //print_r($_POST);
         
+include 'validator.php';
+
+$valobj = new validator();
+
         $fullname = "";
         $email = "";
         $comments = "";
@@ -22,6 +26,19 @@ if (count($_POST))
                     $comments = $_POST["comments"];
                 }
             }
+            
+   $valobj = new validator();
+   
+   if($valobj->validateFullName($fullname)){
+       
+       echo "<p>Full name is valid</p>";
+       
+   }else{
+       echo "<p>Full name is NOT valid</p>";
+   }
+            
+   
+   
 if (!empty($fullname)&& !empty($email)&& !empty($comments)){
     
       $dbh = new PDO("mysql:host=localhost;port=3306;dbname=phplab","root","");
