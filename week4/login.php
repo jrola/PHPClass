@@ -20,7 +20,7 @@ and open the template in the editor.
          */
         
         include 'Config.php';
-        include 'validator.php';
+        include 'Validator.php';
         
         $token = uniqid();
         

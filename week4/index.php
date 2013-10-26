@@ -14,7 +14,7 @@ and open the template in the editor.
         <?php
         session_start();
         
-        include 'validator.php';
+        include 'Validator.php';
         include 'Config.php';
  
          $testEmail = "";

@@ -7,7 +7,7 @@
  */
 
  include 'Config.php';
- include 'validator.php';
+ include 'Validator.php';
   
 $db = new PDO(Config::DB_DNS ,Config::DB_USER,Config::DB_PASSWORD);
 

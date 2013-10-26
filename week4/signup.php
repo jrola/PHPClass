@@ -22,7 +22,7 @@ and open the template in the editor.
         }
         
         ?>
-        <form name="mainform" action="signupprocess.php" method="post">
+        <form name="mainform" action="signupProcess.php" method="post">
             
             
             email: <input type="text" name="email" /><br />
