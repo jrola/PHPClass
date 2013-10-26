@@ -9,7 +9,7 @@
 /**
  * Description of Config
  *
- * @author GFORTI
+ * 
  */
 class Config {
     //put your code here
