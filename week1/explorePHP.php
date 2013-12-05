@@ -194,7 +194,36 @@ and open the template in the editor.
               echo "fruits[" . $key . "] = " . $val . "\n";
             }
             
+/*-----------------------for loop---------------*/        
+            
+    $rows = 100;
+    $col = 1;
+
+    echo "<table border='1'>";
+
+    for($tr=1;$tr<=$rows;$tr++)
+    {
+	if(($tr % 2) == 0)
+	{
+		echo "<tr bgcolor = #000>";
+	}
+	else
+	{
+		echo "<tr bgcolor= #505050>";
+	}
+	for($td=1;$td<=$col;$td++)
+	{
+	 $date = date("F j, Y, g:1 a");
+	echo "<td>".$date." ".token(). "</td>";
+	}
+	echo "</tr>";
+    }
+	echo "</table>";      
+            
             
         ?>
     </body>
 </html>
+
+
+
