@@ -34,7 +34,7 @@ and open the template in the editor.
         
         <h1>You made it</h1>
         
-         <a href='login.php?logout=1'>Logout</a>
+        <a href='admin.php?logout=1'>Logout</a>
 
        
     </body>
