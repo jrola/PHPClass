@@ -18,7 +18,10 @@ and open the template in the editor.
         /*
          * If user is logged in redirect to admin page.
          */
-       
+        
+         if($_SESSION["isLoggedIn"] == TRUE){
+             header("Location:admin.php");
+         }
         
         
         
