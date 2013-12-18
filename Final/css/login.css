@@ -1,0 +1,90 @@
+
+
+body{
+    background-color: black;
+    background-image: url(../images/signup.jpg);
+    opacity: .85;
+    margin: 0 0 0 0 ;
+    }    
+    .title{
+      font-size: 25px;
+      color: white;
+    }
+    
+    a {
+    color: aqua;
+    float: right;
+    }
+
+    a:hover {
+    text-decoration: none;
+    }
+    
+    p{
+     color: aqua;
+     text-align: right;
+
+    }
+    
+    
+    label{
+        display: inline-block;
+        width: 70px;
+        color: aqua;
+        font-size: 15px;
+    }
+    fieldset {
+    border: 3px solid #CCCCCC;
+    margin: 0 0 0 0;
+    width: 400px;
+    margin: auto;
+    
+}
+    legend{
+    border: 1px solid #CCCCCC;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 10px 10px;
+    padding: 3px 8px;
+    color: white;
+}
+input[type=text], input[type=password]{
+    border: 1px solid #369;
+    padding: 0.4em;
+    font-size: 1.2em;
+    width: 300px;
+}
+input[type=submit] {
+   border-top: 1px solid #038775;
+   background: #13ada5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#4aa8e6), to(#13ada5));
+   background: -webkit-linear-gradient(top, #4aa8e6, #13ada5);
+   background: -moz-linear-gradient(top, #4aa8e6, #13ada5);
+   background: -ms-linear-gradient(top, #4aa8e6, #13ada5);
+   background: -o-linear-gradient(top, #4aa8e6, #13ada5);
+   padding: 12.5px 25px;
+   -webkit-border-radius: 40px;
+   -moz-border-radius: 40px;
+   border-radius: 40px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #d4d4d4;
+   font-size: 18px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-top: 30px;
+   margin-bottom: -50px;
+   }
+.button:hover {
+   border-top-color: #039179;
+   background: #039179;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #92b8d1;
+   background: #92b8d1;
+   }
